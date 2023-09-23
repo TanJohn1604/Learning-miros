@@ -1,0 +1,17 @@
+D:\Project\ F411-Discovery-IAR\25\Debug\BrowseInfo\miros.pbi: \
+  D:\Project\ F411-Discovery-IAR\26\miros.c \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\stdint.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\DLib_Config_Normal.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\DLib_Product.h \
+  D:\Project\ F411-Discovery-IAR\26\miros.h \
+  D:\Project\ F411-Discovery-IAR\26\stm32f411xe.h \
+  D:\Project\ F411-Discovery-IAR\26\core_cm4.h \
+  D:\Project\ F411-Discovery-IAR\26\core_cmInstr.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\aarch32\cmsis_iar.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.1\arm\inc\c\aarch32\iccarm_builtin.h \
+  D:\Project\ F411-Discovery-IAR\26\core_cmFunc.h \
+  D:\Project\ F411-Discovery-IAR\26\core_cm4_simd.h \
+  D:\Project\ F411-Discovery-IAR\26\system_stm32f4xx.h

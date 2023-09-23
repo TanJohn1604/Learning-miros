@@ -1,0 +1,90 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Config.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Config.c" -xcl_file "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Config.xcl" -macro_file "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Config.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Config.c" -o "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -On --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Config.tmp"
+  rspfile_name = D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Config.xcl.rsp
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Custom_BSP.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Custom_BSP.c" -xcl_file "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Custom_BSP.xcl" -macro_file "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Custom_BSP.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Custom_BSP.c" -o "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -On --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Custom_BSP.tmp"
+  rspfile_name = D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Custom_BSP.xcl.rsp
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Interrupt.c" -xcl_file "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.xcl" -macro_file "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Interrupt.c" -o "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -On --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.tmp"
+  rspfile_name = D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.xcl.rsp
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\main.c" -xcl_file "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\main.xcl" -macro_file "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\main.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\main.c" -o "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -On --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\main.tmp"
+  rspfile_name = D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\main.xcl.rsp
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\star.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\star.c" -xcl_file "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\star.xcl" -macro_file "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\star.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\star.c" -o "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -On --source_encoding utf8 --text_out utf8 --utf8_text_in --predef_macros "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\star.tmp"
+  rspfile_name = D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\star.xcl.rsp
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Config.pbi : INDEXER D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Config.xcl |  $
+D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Config.c
+  flags = "-out=D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Config.pbi" -f "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Config.xcl"
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Custom_BSP.pbi : INDEXER D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Custom_BSP.xcl |  $
+D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Custom_BSP.c
+  flags = "-out=D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Custom_BSP.pbi" -f "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Custom_BSP.xcl"
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.pbi : INDEXER D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.xcl |  $
+D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Interrupt.c
+  flags = "-out=D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.pbi" -f "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.xcl"
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\main.pbi : INDEXER D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\main.xcl |  $
+D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\main.c
+  flags = "-out=D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\main.pbi" -f "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\main.xcl"
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\star.pbi : INDEXER D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\star.xcl |  $
+D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\star.c
+  flags = "-out=D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\star.pbi" -f "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\star.xcl"
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.pbw : MAKEBROWSE D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.pbd
+  flags = "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.pbd" -output "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.pbw"
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt_part0.pbi : PDBLINK D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Config.pbi |  $
+D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Custom_BSP.pbi
+  flags = -M "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt_part0.pbi" "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Config.pbi" "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Custom_BSP.pbi"
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt_part1.pbi : PDBLINK D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.pbi |  $
+D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\main.pbi
+  flags = -M "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt_part1.pbi" "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.pbi" "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\main.pbi"
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt_part2.pbi : PDBLINK D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\star.pbi
+  flags = -M "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt_part2.pbi" "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\star.pbi"
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.pbd : PDBLINK D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt_part0.pbi |  $
+D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt_part1.pbi $
+D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt_part2.pbi
+  flags = -M "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt.pbd" "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt_part0.pbi" "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt_part1.pbi" "D$:\Project$ F411-Discovery-IAR\Regis\Interrupt\Debug\BrowseInfo\Interrupt_part2.pbi"
+

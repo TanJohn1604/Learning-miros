@@ -1,0 +1,205 @@
+###############################################################################
+#
+# IAR ELF Linker V9.30.1.335/W64 for ARM                  21/May/2023  16:25:37
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =  D:\Project F411-Discovery-IAR\Regis\SPI\Debug\Exe\SPI.out
+#    Map file     =  D:\Project F411-Discovery-IAR\Regis\SPI\Debug\List\SPI.map
+#    Command line =
+#        -f "D:\Project F411-Discovery-IAR\Regis\SPI\Debug\Exe\SPI.out.rsp"
+#        ("D:\Project F411-Discovery-IAR\Regis\SPI\Debug\Obj\Config.o"
+#        "D:\Project F411-Discovery-IAR\Regis\SPI\Debug\Obj\main.o"
+#        --no_out_extension -o "D:\Project
+#        F411-Discovery-IAR\Regis\SPI\Debug\Exe\SPI.out" --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
+#        "D:\Project F411-Discovery-IAR\Regis\SPI\Debug\List\SPI.map" --config
+#        "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.1\arm/config/linker/ST/stm32f411xE.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale --cpu=Cortex-M4
+#        --fpu=VFPv4_sp)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because --advanced_heap
+was not specified and the application did not appear to
+be primarily optimized for speed.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x807'ffff] { ro };
+define block CSTACK with size = 8K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2001'ffff] {
+          rw, block CSTACK, block HEAP };
+
+No sections matched the following patterns:
+
+  rw  in "P2"
+
+
+  Section   Kind         Address    Size  Object
+  -------   ----         -------    ----  ------
+"A0":                               0x40
+  .intvec   ro code   0x800'0000    0x40  vector_table_M.o [4]
+                    - 0x800'0040    0x40
+
+"P1":                              0x504
+  .text     ro code   0x800'0040   0x2cc  main.o [1]
+  .text     ro code   0x800'030c    0x14  memset.o [4]
+  .text     ro code   0x800'0320   0x10c  Config.o [1]
+  .text     ro code   0x800'042c    0x66  ABImemset.o [4]
+  .text     ro code   0x800'0492     0x2  vectortrap_M.o [4]
+  .text     ro code   0x800'0494    0x22  fpinit_M.o [3]
+  .text     ro code   0x800'04b8    0x1e  cmain.o [4]
+  .text     ro code   0x800'04d6     0x4  low_level_init.o [2]
+  .text     ro code   0x800'04da     0x4  exit.o [2]
+  .text     ro code   0x800'04e0     0xa  cexit.o [4]
+  .text     ro code   0x800'04ec    0x14  exit.o [5]
+  .text     ro code   0x800'0500    0x1c  cstartup_M.o [4]
+  .rodata   const     0x800'051c     0xc  main.o [1]
+  .rodata   const     0x800'0528     0xc  main.o [1]
+  .rodata   const     0x800'0534     0xc  main.o [1]
+  .rodata   const     0x800'0540     0x4  main.o [1]
+                    - 0x800'0544   0x504
+
+"P2":                             0x2000
+  CSTACK             0x2000'0000  0x2000  <Block>
+    CSTACK  uninit   0x2000'0000  0x2000  <Block tail>
+                   - 0x2000'2000  0x2000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'0544   0x807'ffff  0x7'fabc
+  0x2000'2000  0x2001'ffff  0x1'e000
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+D:\Project F411-Discovery-IAR\Regis\SPI\Debug\Obj: [1]
+    Config.o              268
+    main.o                716       40
+    -------------------------------------------
+    Total:                984       40
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+m7M_tls.a: [3]
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:                 34
+
+rt7M_tl.a: [4]
+    ABImemset.o           102
+    cexit.o                10
+    cmain.o                30
+    cstartup_M.o           28
+    memset.o               20
+    vector_table_M.o       64
+    vectortrap_M.o          2
+    -------------------------------------------
+    Total:                256
+
+shb_l.a: [5]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    6
+    Linker created                        8'192
+-----------------------------------------------
+    Grand Total:        1'308       40    8'192
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                     Address  Size  Type      Object
+-----                     -------  ----  ----      ------
+?main                  0x800'04b9        Code  Gb  cmain.o [4]
+BusFault_Handler       0x800'0493        Code  Wk  vectortrap_M.o [4]
+CSTACK$$Base          0x2000'0000         --   Gb  - Linker created -
+CSTACK$$Limit         0x2000'2000         --   Gb  - Linker created -
+DebugMon_Handler       0x800'0493        Code  Wk  vectortrap_M.o [4]
+GPIO_Led_Config        0x800'0321  0x3a  Code  Gb  Config.o [1]
+HardFault_Handler      0x800'0493        Code  Wk  vectortrap_M.o [4]
+MemManage_Handler      0x800'0493        Code  Wk  vectortrap_M.o [4]
+NMI_Handler            0x800'0493        Code  Wk  vectortrap_M.o [4]
+PendSV_Handler         0x800'0493        Code  Wk  vectortrap_M.o [4]
+Region$$Table$$Base           0x0         --   Gb  - Linker created -
+Region$$Table$$Limit          0x0         --   Gb  - Linker created -
+SPI_Enable             0x800'00d5   0xc  Code  Gb  main.o [1]
+SPI_I3G4250D_Config    0x800'0041  0x94  Code  Gb  main.o [1]
+SPI_Read_Data          0x800'0135  0x24  Code  Gb  main.o [1]
+SPI_Send_Byte          0x800'0113  0x22  Code  Gb  main.o [1]
+SPI_Transmit           0x800'00e1  0x32  Code  Gb  main.o [1]
+SVC_Handler            0x800'0493        Code  Wk  vectortrap_M.o [4]
+SysClockConfig         0x800'035b  0x36  Code  Gb  Config.o [1]
+SysTick_Handler        0x800'0493        Code  Wk  vectortrap_M.o [4]
+TIM2_Config            0x800'0391  0x42  Code  Gb  Config.o [1]
+UART2_SendChar         0x800'01e7  0x10  Code  Gb  main.o [1]
+USART2_Config          0x800'0159  0x8e  Code  Gb  main.o [1]
+UsageFault_Handler     0x800'0493        Code  Wk  vectortrap_M.o [4]
+__aeabi_memset         0x800'042d        Code  Gb  ABImemset.o [4]
+__cmain                0x800'04b9        Code  Gb  cmain.o [4]
+__exit                 0x800'04ed  0x14  Code  Gb  exit.o [5]
+__iar_Memset           0x800'042d        Code  Gb  ABImemset.o [4]
+__iar_Memset_word      0x800'0435        Code  Gb  ABImemset.o [4]
+__iar_init_vfp         0x800'0495        Code  Gb  fpinit_M.o [3]
+__iar_program_start    0x800'0501        Code  Gb  cstartup_M.o [4]
+__low_level_init       0x800'04d7   0x4  Code  Gb  low_level_init.o [2]
+__vector_table         0x800'0000        Data  Gb  vector_table_M.o [4]
+_call_main             0x800'04c5        Code  Gb  cmain.o [4]
+_exit                  0x800'04e1        Code  Gb  cexit.o [4]
+accdelay               0x800'03d3   0xe  Code  Gb  Config.o [1]
+delay                  0x800'0415  0x18  Code  Gb  Config.o [1]
+exit                   0x800'04db   0x4  Code  Gb  exit.o [2]
+main                   0x800'01f7  0xba  Code  Gb  main.o [1]
+memset                 0x800'030d  0x14  Code  Gb  memset.o [4]
+
+
+[1] = D:\Project F411-Discovery-IAR\Regis\SPI\Debug\Obj
+[2] = dl7M_tln.a
+[3] = m7M_tls.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  1'308 bytes of readonly  code memory
+     40 bytes of readonly  data memory
+  8'192 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

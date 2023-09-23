@@ -1,0 +1,23 @@
+# ninja log v5
+3	270	7063638790865239	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Obj/main.o	3f732e68e4a695f6
+276	339	7063638791620695	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Exe/SPI.out	51da0b55e622eccf
+1	242	7062784059574968	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Obj/Config.o	f28e91fa52cc272e
+350	360	7063638791899614	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Exe/SPI.hex	9823bdde43e59dfb
+3	176	7063639907104974	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Obj/main.o	3f732e68e4a695f6
+182	234	7063639907730938	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Exe/SPI.out	51da0b55e622eccf
+246	259	7063639908029851	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Exe/SPI.hex	9823bdde43e59dfb
+4	205	7063640562551035	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Obj/main.o	3f732e68e4a695f6
+217	275	7063640563332073	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Exe/SPI.out	51da0b55e622eccf
+286	295	7063640563669302	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Exe/SPI.hex	9823bdde43e59dfb
+2	212	7063641469815702	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Obj/main.o	3f732e68e4a695f6
+219	276	7063641470544108	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Exe/SPI.out	51da0b55e622eccf
+286	297	7063641470803057	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Exe/SPI.hex	9823bdde43e59dfb
+2	280	7063642315593695	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Obj/main.o	3f732e68e4a695f6
+291	352	7063642316361943	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Exe/SPI.out	51da0b55e622eccf
+363	375	7063642316662068	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Exe/SPI.hex	9823bdde43e59dfb
+2	301	7063643191147880	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Obj/main.o	3f732e68e4a695f6
+309	367	7063643191877991	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Exe/SPI.out	51da0b55e622eccf
+379	392	7063643192186909	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Exe/SPI.hex	9823bdde43e59dfb
+2	174	7063643375232353	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Obj/main.o	3f732e68e4a695f6
+181	234	7063643375863088	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Exe/SPI.out	51da0b55e622eccf
+245	257	7063643376152326	D:/Project F411-Discovery-IAR/Regis/SPI/Debug/Exe/SPI.hex	9823bdde43e59dfb

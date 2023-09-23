@@ -1,0 +1,51 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Config.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Config.c" -xcl_file "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Config.xcl" -macro_file "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Config.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Config.c" -o "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --char_is_signed --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -On --predef_macros "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Config.tmp"
+  rspfile_name = D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Config.xcl.rsp
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Project$ F411-Discovery-IAR\Regis\Uart\main.c" -xcl_file "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\main.xcl" -macro_file "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\main.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "D$:\Project$ F411-Discovery-IAR\Regis\Uart\main.c" -o "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\Obj\\" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --char_is_signed --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -On --predef_macros "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\main.tmp"
+  rspfile_name = D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\main.xcl.rsp
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Config.pbi : INDEXER D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Config.xcl |  $
+D$:\Project$ F411-Discovery-IAR\Regis\Uart\Config.c
+  flags = "-out=D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Config.pbi" -f "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Config.xcl"
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\main.pbi : INDEXER D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\main.xcl |  $
+D$:\Project$ F411-Discovery-IAR\Regis\Uart\main.c
+  flags = "-out=D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\main.pbi" -f "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\main.xcl"
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Uart.pbw : MAKEBROWSE D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Uart.pbd
+  flags = "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Uart.pbd" -output "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Uart.pbw"
+
+build D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Uart.pbd : PDBLINK D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Config.pbi |  $
+D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\main.pbi
+  flags = -M "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Uart.pbd" "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\Config.pbi" "D$:\Project$ F411-Discovery-IAR\Regis\Uart\Debug\BrowseInfo\main.pbi"
+

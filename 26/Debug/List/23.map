@@ -1,0 +1,240 @@
+###############################################################################
+#
+# IAR ELF Linker V9.30.1.335/W64 for ARM                  28/Aug/2023  19:54:44
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =  D:\Project F411-Discovery-IAR\26\Debug\Exe\23.out
+#    Map file     =  D:\Project F411-Discovery-IAR\26\Debug\List\23.map
+#    Command line =
+#        -f "D:\Project F411-Discovery-IAR\26\Debug\Exe\23.out.rsp"
+#        ("D:\Project F411-Discovery-IAR\26\Debug\Obj\Config.o" "D:\Project
+#        F411-Discovery-IAR\26\Debug\Obj\Custom_BSP.o" "D:\Project
+#        F411-Discovery-IAR\26\Debug\Obj\main.o" "D:\Project
+#        F411-Discovery-IAR\26\Debug\Obj\miros.o" --no_out_extension -o
+#        "D:\Project F411-Discovery-IAR\26\Debug\Exe\23.out" --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
+#        "D:\Project F411-Discovery-IAR\26\Debug\List\23.map" --config
+#        "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.1\arm/config/linker/ST/stm32f411xE.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale --cpu=Cortex-M4
+#        --fpu=None)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because --advanced_heap
+was not specified and the application did not appear to
+be primarily optimized for speed.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x807'ffff] { ro };
+define block CSTACK with size = 8K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2001'ffff] {
+          rw, block CSTACK, block HEAP };
+
+  Section          Kind         Address    Size  Object
+  -------          ----         -------    ----  ------
+"A0":                                      0x40
+  .intvec          ro code   0x800'0000    0x40  vector_table_M.o [3]
+                           - 0x800'0040    0x40
+
+"P1":                                     0x4cc
+  .text            ro code   0x800'0040   0x230  miros.o [1]
+  .text            ro code   0x800'0270    0xa0  Config.o [1]
+  .text            ro code   0x800'0310    0x94  Custom_BSP.o [1]
+  .text            ro code   0x800'03a4    0x94  main.o [1]
+  .text            ro code   0x800'0438    0x38  zero_init3.o [3]
+  .text            ro code   0x800'0470    0x28  data_init.o [3]
+  .iar.init_table  const     0x800'0498    0x10  - Linker created -
+  .text            ro code   0x800'04a8    0x1e  cmain.o [3]
+  .text            ro code   0x800'04c6     0x4  low_level_init.o [2]
+  .text            ro code   0x800'04ca     0x4  exit.o [2]
+  .text            ro code   0x800'04ce     0x2  vectortrap_M.o [3]
+  .text            ro code   0x800'04d0     0xa  cexit.o [3]
+  .text            ro code   0x800'04dc    0x14  exit.o [4]
+  .text            ro code   0x800'04f0    0x1c  cstartup_M.o [3]
+  .rodata          const     0x800'050c     0x0  zero_init3.o [3]
+                           - 0x800'050c   0x4cc
+
+"P2", part 1 of 2:                        0x28c
+  .bss             zero     0x2000'0000    0xa0  main.o [1]
+  .bss             zero     0x2000'00a0    0xa0  main.o [1]
+  .bss             zero     0x2000'0140    0xa0  main.o [1]
+  .bss             zero     0x2000'01e0    0x84  miros.o [1]
+  .bss             zero     0x2000'0264     0x8  main.o [1]
+  .bss             zero     0x2000'026c     0x8  main.o [1]
+  .bss             zero     0x2000'0274     0x8  miros.o [1]
+  .bss             zero     0x2000'027c     0x4  miros.o [1]
+  .bss             zero     0x2000'0280     0x4  miros.o [1]
+  .bss             zero     0x2000'0284     0x4  miros.o [1]
+  .bss             zero     0x2000'0288     0x1  miros.o [1]
+  .bss             zero     0x2000'0289     0x1  miros.o [1]
+                          - 0x2000'028a   0x28a
+
+"P2", part 2 of 2:                       0x2000
+  CSTACK                    0x2000'0290  0x2000  <Block>
+    CSTACK         uninit   0x2000'0290  0x2000  <Block tail>
+                          - 0x2000'2290  0x2000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'050c   0x807'ffff  0x7'faf4
+  0x2000'028c  0x2000'028f       0x4
+  0x2000'2290  0x2001'ffff  0x1'dd70
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x28a:
+          0x2000'0000  0x28a
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+D:\Project F411-Discovery-IAR\26\Debug\Obj: [1]
+    Config.o              160
+    Custom_BSP.o          148
+    main.o                148               496
+    miros.o               560               154
+    -------------------------------------------
+    Total:              1'016               650
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+rt7M_tl.a: [3]
+    cexit.o                10
+    cmain.o                30
+    cstartup_M.o           28
+    data_init.o            40
+    vector_table_M.o       64
+    vectortrap_M.o          2
+    zero_init3.o           56
+    -------------------------------------------
+    Total:                230
+
+shb_l.a: [4]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    2
+    Linker created                  16    8'192
+-----------------------------------------------
+    Grand Total:        1'276       16    8'842
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+.iar.init_table$$Base    0x800'0498         --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'04a8         --   Gb  - Linker created -
+?main                    0x800'04a9        Code  Gb  cmain.o [3]
+BusFault_Handler         0x800'04cf        Code  Wk  vectortrap_M.o [3]
+CSTACK$$Base            0x2000'0290         --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'2290         --   Gb  - Linker created -
+DebugMon_Handler         0x800'04cf        Code  Wk  vectortrap_M.o [3]
+GPIOD_LED_12_OFF         0x800'0341   0xc  Code  Gb  Custom_BSP.o [1]
+GPIOD_LED_12_ON          0x800'0335   0xc  Code  Gb  Custom_BSP.o [1]
+GPIOD_LED_13_OFF         0x800'0359   0xc  Code  Gb  Custom_BSP.o [1]
+GPIOD_LED_13_ON          0x800'034d   0xc  Code  Gb  Custom_BSP.o [1]
+GPIO_Config              0x800'0271  0x4a  Code  Gb  Config.o [1]
+HardFault_Handler        0x800'04cf        Code  Wk  vectortrap_M.o [3]
+MemManage_Handler        0x800'04cf        Code  Wk  vectortrap_M.o [3]
+NMI_Handler              0x800'04cf        Code  Wk  vectortrap_M.o [3]
+NVIC_SetPriority         0x800'0311  0x24  Code  Lc  Custom_BSP.o [1]
+OSThread_start           0x800'0165  0xaa  Code  Gb  miros.o [1]
+OS_curr                 0x2000'027c   0x4  Data  Gb  miros.o [1]
+OS_currIdx              0x2000'0289   0x1  Data  Gb  miros.o [1]
+OS_delay                 0x800'0141  0x24  Code  Gb  miros.o [1]
+OS_init                  0x800'005d  0x1a  Code  Gb  miros.o [1]
+OS_next                 0x2000'0280   0x4  Data  Gb  miros.o [1]
+OS_onIdle                0x800'0049  0x14  Code  Gb  miros.o [1]
+OS_readySet             0x2000'0284   0x4  Data  Gb  miros.o [1]
+OS_run                   0x800'00db   0xc  Code  Gb  miros.o [1]
+OS_sched                 0x800'0077  0x64  Code  Gb  miros.o [1]
+OS_thread               0x2000'01e0  0x84  Data  Gb  miros.o [1]
+OS_threadNum            0x2000'0288   0x1  Data  Gb  miros.o [1]
+OS_tick                  0x800'00e7  0x5a  Code  Gb  miros.o [1]
+PendSV_Handler           0x800'0211  0x2e  Code  Gb  miros.o [1]
+Region$$Table$$Base      0x800'0498         --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'04a8         --   Gb  - Linker created -
+SVC_Handler              0x800'04cf        Code  Wk  vectortrap_M.o [3]
+SysClockConfig           0x800'02bb  0x36  Code  Gb  Config.o [1]
+SysTick_Handler          0x800'0365  0x10  Code  Gb  Custom_BSP.o [1]
+SysTick_init             0x800'0375  0x1c  Code  Gb  Custom_BSP.o [1]
+UsageFault_Handler       0x800'04cf        Code  Wk  vectortrap_M.o [3]
+__cmain                  0x800'04a9        Code  Gb  cmain.o [3]
+__exit                   0x800'04dd  0x14  Code  Gb  exit.o [4]
+__iar_data_init3         0x800'0471  0x28  Code  Gb  data_init.o [3]
+__iar_program_start      0x800'04f1        Code  Gb  cstartup_M.o [3]
+__iar_zero_init3         0x800'0439  0x38  Code  Gb  zero_init3.o [3]
+__low_level_init         0x800'04c7   0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000        Data  Gb  vector_table_M.o [3]
+_call_main               0x800'04b5        Code  Gb  cmain.o [3]
+_exit                    0x800'04d1        Code  Gb  cexit.o [3]
+blinky1                 0x2000'0264   0x8  Data  Gb  main.o [1]
+blinky2                 0x2000'026c   0x8  Data  Gb  main.o [1]
+exit                     0x800'04cb   0x4  Code  Gb  exit.o [2]
+idleThread              0x2000'0274   0x8  Data  Gb  miros.o [1]
+main                     0x800'03e5  0x36  Code  Gb  main.o [1]
+main_blinky1             0x800'03a5  0x20  Code  Gb  main.o [1]
+main_blinky2             0x800'03c5  0x20  Code  Gb  main.o [1]
+main_idleThread          0x800'0041   0x8  Code  Gb  miros.o [1]
+stack_blinky1           0x2000'0000  0xa0  Data  Gb  main.o [1]
+stack_blinky2           0x2000'00a0  0xa0  Data  Gb  main.o [1]
+stack_idleThread        0x2000'0140  0xa0  Data  Gb  main.o [1]
+
+
+[1] = D:\Project F411-Discovery-IAR\26\Debug\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+  1'276 bytes of readonly  code memory
+     16 bytes of readonly  data memory
+  8'842 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
